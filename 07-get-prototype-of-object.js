@@ -15,7 +15,11 @@ const proto = Object.getPrototypeOf(leo)
 
 console.log(proto) // {eat: ƒ, constructor: ƒ}
 console.log(Animal.prototype) // {eat: ƒ, constructor: ƒ}
-console.log(proto === Animal.prototype) // true
+
+// Animal constructor function has a prototype property
+// where we can share methods across all instances
+// getPrototypeOf allows us to see the prototype of the instance
+console.log(Animal.prototype === Object.getPrototypeOf(leo)) // true
 // leo.prototype // undefined
 
 // instance.constructor
@@ -33,3 +37,4 @@ console.log(leo.constructor) // leo.constructor.toString()
   //return this
 }
 */
+console.log(Animal.prototype.constructor)
