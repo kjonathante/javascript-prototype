@@ -9,7 +9,13 @@ function f() {
 f.defer(1000); // shows "Hello!" after 1 second
 
 Function.__proto__.defer = function (n) {
-  setTimeout(this, n, this.arguments )
+  const f = this
+  return function(...args) {
+    console.log(args)
+    setTimeout( _ => {
+      f.apply(this, args)
+    }, n)
+  }
 };
 
 

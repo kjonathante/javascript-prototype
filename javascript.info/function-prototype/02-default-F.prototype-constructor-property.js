@@ -7,11 +7,14 @@ function Rabbit() {}
 Rabbit.prototype = { constructor: Rabbit };
 */
 
+Rabbit.prototype.constructor === Rabbit
+
 // If F.prototype is an object,
 // then new operator uses it to set [[Prototype]] for the new object.
 const rabbit = new Rabbit();
 
 rabbit.constructor === Rabbit
 
-// then you can do
+// We can use constructor property to create 
+// a new object using the same constructor as the existing one.
 const rabbit2 = new rabbit.constructor()
